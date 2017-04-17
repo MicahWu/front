@@ -1,0 +1,26 @@
+<html>
+<meta charset="utf-8"></meta>
+<!-- <script src="https://unpkg.com/vue/dist/vue.js"></script> -->
+<script src="vue.js"></script>
+<body>
+v-bind指令可以缩写为一个冒号，v-on指令可以缩写为@符号。
+  <div id="app">
+            <ul class="pagination">
+                <li v-for="n in pageCount">
+                    <a href="javascripit:void(0)" v-bind:class="activeNumber === n + 1 ? 'active' : ''">{{ n + 1 }}</a>
+                </li>
+            </ul>
+        </div>
+
+</body>
+<script type="text/javascript">
+
+var vm = new Vue({
+            el: '#app',
+            data: {
+                activeNumber: 1,
+                pageCount: 10
+            }
+        })
+</script>
+</html>

@@ -1,0 +1,59 @@
+<html>
+<meta charset="utf-8"></meta>
+<!-- <script src="https://unpkg.com/vue/dist/vue.js"></script> -->
+<script src="vue.js"></script>
+<body>
+
+  <div id="app">
+              <h1 v-if="age >= 25">Age: {{ age }}</h1>
+              <h1 v-else>Name: {{ name }}</h1>
+              <h1>---------------------分割线---------------------</h1>
+              <h1 v-show="name.indexOf('keep') >= 0">Name: {{ name }}</h1>
+              <h1 v-else>Sex: {{ sex }}</h1>
+          </div>
+
+  <div id="app-3">
+    <p v-if="seen">现在你看到我了</p>
+  </div>
+
+  <div id="app-4">
+    <ol>
+      <li v-for="todo in todos">
+        {{ todo.text }}
+      </li>
+    </ol>
+  </div>
+
+</body>
+<script type="text/javascript">
+
+var vm = new Vue({
+           el: '#app',
+           data: {
+               age: 28,
+               name: 'keepfool',
+               sex: 'Male'
+           }
+       })
+
+var app3 = new Vue({
+  el: '#app-3',
+  data: {
+    seen: true
+  }
+})
+
+
+var app4 = new Vue({
+  el: '#app-4',
+  data: {
+    todos: [
+      { text: '学习 JavaScript' },
+      { text: '学习 Vue' },
+      { text: '整个牛项目' }
+    ]
+  }
+})
+
+</script>
+</html>
